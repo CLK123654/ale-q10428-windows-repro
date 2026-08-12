@@ -1,0 +1,8 @@
+打开shard_messages分片、room_members.csv、receipt_log.csv和moderation_rules.json，确认消息业务键、版本字段、成员关系和规则顺序。
+在rebuild_chat_transcripts.mjs中解析JSONL与CSV，拒绝字段缺失、重复成员和不支持的事件类型。
+为事件建立不含shard_event_id的业务签名，折叠重复副本后按room_id和msg_id建立版本组。
+用revision、server_ts和shard_event_id选出最终事件，将最终delete排除在转写之外。
+依次执行literal与regex遮盖，把命中规则写入转写和动作报告，不保存命中原文。
+按房间与logical_seq生成转写序号，从成员集合扣除sender_id得到期望收件人。
+按room_id、msg_id和recipient_id归并回执，生成缺口明细，再由业务明细聚合房间汇总。
+在input_data目录运行npm run process，读取生成的NDJSON、CSV报告并检查业务关联。
