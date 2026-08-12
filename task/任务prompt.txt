@@ -4,7 +4,7 @@
 
 同一业务事件的重复副本以除shard_event_id外的业务字段判定，只参与一次版本选择。同一room_id和msg_id按revision、server_ts、shard_event_id依次取最新事件；delete是最终版本时，不进入转写。每个房间按logical_seq和msg_id排列可见消息，并从1编排transcript_seq。
 
-遮盖规则按文件顺序作用于最终可见文本。每次命中都要记录rule_id、kind、replacement和遮盖后的文本，动作报告不得保存命中原文。期望收件人是房间成员去掉发送者，投递回执按room_id、msg_id、recipient_id去重；没有回执的成员进入缺口明细。房间汇总从转写、遮盖动作和缺口明细归集，不能按房间名称预设结果。
+遮盖规则按文件顺序作用于最终可见文本。每次命中都要记录rule_id、kind、replacement和遮盖后的文本，动作报告不保存命中原文。期望收件人是房间成员去掉发送者，投递回执按room_id、msg_id、recipient_id去重；没有回执的成员进入缺口明细。房间汇总从转写、遮盖动作和缺口明细归集。
 
 把完成版保存为output/scripts/rebuild_chat_transcripts.mjs，在input_data目录运行npm run process。交付以下文件：
 output/scripts/rebuild_chat_transcripts.mjs
