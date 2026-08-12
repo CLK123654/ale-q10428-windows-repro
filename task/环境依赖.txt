@@ -1,0 +1,5 @@
+Windows11、macOS13及主流64位Linux均受支持。主软件为Node.js20或更高兼容版本，需支持ESM以及node:fs、node:path、node:child_process和node:url。
+
+项目不使用第三方npm包。package.json提供离线入口；PowerShell、Windows Terminal或系统终端可用于运行npm命令，CSV、NDJSON和JSON查看器可用于抽查报告。正式处理不连接真实聊天系统，也不需要额外账号或商业许可证。
+
+输入目录需要读取权限，同级output目录需要写入权限。2核CPU、2GB内存和500MB可写磁盘可以处理随附材料。
