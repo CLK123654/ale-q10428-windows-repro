@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "scanned_sources": 246,
+  "violations": [],
+  "answer_sheets": [
+    "交付物答案清单",
+    "固定字段答案",
+    "固定集合答案",
+    "固定数值答案",
+    "允许变体答案"
+  ],
+  "specification_sheets": [
+    "任务规格转化"
+  ],
+  "task_spec_row_count": 19,
+  "task_spec_column_count": 2,
+  "task_asset_id": "node_chat_shard_transcript_reconciliation",
+  "task_asset_id_valid": true,
+  "forbidden_spec_labels": [],
+  "declared_delivery_paths": [
+    "output/reports/moderation_actions.csv",
+    "output/reports/receipt_gaps.csv",
+    "output/reports/room_summary.csv",
+    "output/reports/room_transcripts.ndjson",
+    "output/scripts/rebuild_chat_transcripts.mjs"
+  ],
+  "reference_paths": [
+    "output/reports/moderation_actions.csv",
+    "output/reports/receipt_gaps.csv",
+    "output/reports/room_summary.csv",
+    "output/reports/room_transcripts.ndjson",
+    "output/scripts/rebuild_chat_transcripts.mjs"
+  ],
+  "business_inputs": [
+    "input_data/room_members.csv",
+    "input_data/receipt_log.csv",
+    "input_data/moderation_rules.json",
+    "input_data/shard_messages/shard_a.jsonl",
+    "input_data/shard_messages/shard_b.jsonl",
+    "input_data/shard_messages/shard_c.jsonl"
+  ],
+  "business_inputs_present": true,
+  "humanizer_score": 47,
+  "candidate_score_answer_leak_hits": 0,
+  "online_ai_detector_used_as_conclusion": false
+}
